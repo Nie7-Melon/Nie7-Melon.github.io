@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="article-date">
+  <time class="dt-published" datetime="2024-11-07T09:35:30.000Z" itemprop="datePublished">2024-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安装node.js npm<br>我以前安装过，版本node v20.17.0 npm 10.8.3<br>安装淘宝镜像源，这样速度会快<br>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>我开始没有成功，输入npm cache clean –forece清除缓存后再安装成功<br>cnpm 版本9.4.0</li>
+<li>用cnpm全局安装hexo<br>cnpm install -g hexo-cli<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">C</span>:\<span class="title class_">Users</span>\<span class="title class_">Administrator</span>&gt;hexo -v</span><br><span class="line">hexo-<span class="attr">cli</span>: <span class="number">4.3</span><span class="number">.2</span></span><br><span class="line"><span class="attr">os</span>: win32 <span class="number">10.0</span><span class="number">.22631</span> <span class="literal">undefined</span></span><br><span class="line"><span class="attr">node</span>: <span class="number">20.17</span><span class="number">.0</span></span><br><span class="line"><span class="attr">acorn</span>: <span class="number">8.11</span><span class="number">.3</span></span><br><span class="line"><span class="attr">ada</span>: <span class="number">2.9</span><span class="number">.0</span></span><br><span class="line"><span class="attr">ares</span>: <span class="number">1.32</span><span class="number">.3</span></span><br><span class="line"><span class="attr">base64</span>: <span class="number">0.5</span><span class="number">.2</span></span><br><span class="line"><span class="attr">brotli</span>: <span class="number">1.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">cjs_module_lexer</span>: <span class="number">1.2</span><span class="number">.2</span></span><br><span class="line"><span class="attr">cldr</span>: <span class="number">45.0</span></span><br><span class="line"><span class="attr">icu</span>: <span class="number">75.1</span></span><br><span class="line"><span class="attr">llhttp</span>: <span class="number">8.1</span><span class="number">.2</span></span><br><span class="line"><span class="attr">modules</span>: <span class="number">115</span></span><br><span class="line"><span class="attr">napi</span>: <span class="number">9</span></span><br><span class="line"><span class="attr">nghttp2</span>: <span class="number">1.61</span><span class="number">.0</span></span><br><span class="line"><span class="attr">nghttp3</span>: <span class="number">0.7</span><span class="number">.0</span></span><br><span class="line"><span class="attr">ngtcp2</span>: <span class="number">1.1</span><span class="number">.0</span></span><br><span class="line"><span class="attr">openssl</span>: <span class="number">3.0</span><span class="number">.13</span>+quic</span><br><span class="line"><span class="attr">simdutf</span>: <span class="number">5.3</span><span class="number">.0</span></span><br><span class="line"><span class="attr">tz</span>: 2024a</span><br><span class="line"><span class="attr">undici</span>: <span class="number">6.19</span><span class="number">.2</span></span><br><span class="line"><span class="attr">unicode</span>: <span class="number">15.1</span></span><br><span class="line"><span class="attr">uv</span>: <span class="number">1.46</span><span class="number">.0</span></span><br><span class="line"><span class="attr">uvwasi</span>: <span class="number">0.0</span><span class="number">.21</span></span><br><span class="line"><span class="attr">v8</span>: <span class="number">11.3</span><span class="number">.244</span><span class="number">.8</span>-node<span class="number">.23</span></span><br><span class="line"><span class="attr">zlib</span>: <span class="number">1.3</span><span class="number">.0</span><span class="number">.1</span>-motley-209717d</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h2 id="建立文件夹blog，从文件夹里打开终端hexo-init-生成博客-初始化博客hexo-s-启动本地博客服务hexo-n-“我的第一篇文章”-创建新的文章然后在blog文件夹-source-posts-新增了一个“我的第一篇文章-md”文件更新文章内容后，回到blog文件夹打开终端，先输入hexo-clean，然后输入hexo-g-生成，然后再hexo-s启动"><a href="#建立文件夹blog，从文件夹里打开终端hexo-init-生成博客-初始化博客hexo-s-启动本地博客服务hexo-n-“我的第一篇文章”-创建新的文章然后在blog文件夹-source-posts-新增了一个“我的第一篇文章-md”文件更新文章内容后，回到blog文件夹打开终端，先输入hexo-clean，然后输入hexo-g-生成，然后再hexo-s启动" class="headerlink" title="建立文件夹blog，从文件夹里打开终端hexo init #生成博客 初始化博客hexo s #启动本地博客服务hexo n “我的第一篇文章” #创建新的文章然后在blog文件夹&#x2F;source&#x2F;_posts&#x2F;新增了一个“我的第一篇文章.md”文件更新文章内容后，回到blog文件夹打开终端，先输入hexo clean，然后输入hexo g 生成，然后再hexo s启动"></a>建立文件夹blog，从文件夹里打开终端<br>hexo init #生成博客 初始化博客<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">PS</span> <span class="attr">D</span>:\<span class="title class_">Pragram</span> code\blog&gt; hexo init</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Cloning</span> hexo-starter <span class="attr">https</span>:<span class="comment">//github.com/hexojs/hexo-starter.git</span></span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Install</span> dependencies</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Start</span> blogging <span class="keyword">with</span> <span class="title class_">Hexo</span>!</span><br></pre></td></tr></table></figure><br>hexo s #启动本地博客服务<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">PS</span> <span class="attr">D</span>:\<span class="title class_">Pragram</span> code\blog&gt; hexo s</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Validating</span> config</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Start</span> processing</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Hexo</span> is running at <span class="attr">http</span>:<span class="comment">//localhost:4000/ . Press Ctrl+C to stop.</span></span><br></pre></td></tr></table></figure><br>hexo n “我的第一篇文章” #创建新的文章<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">PS</span> <span class="attr">D</span>:\<span class="title class_">Pragram</span> code\blog&gt; hexo n <span class="string">&quot;我的第一篇文章&quot;</span></span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Validating</span> config</span><br><span class="line"><span class="variable constant_">INFO</span>  <span class="title class_">Created</span>: <span class="attr">D</span>:\<span class="title class_">Pragram</span> code\blog\source\_posts\我的第一篇文章.<span class="property">md</span></span><br></pre></td></tr></table></figure><br>然后在blog文件夹&#x2F;source&#x2F;_posts&#x2F;新增了一个“我的第一篇文章.md”文件<br>更新文章内容后，回到blog文件夹打开终端，先输入hexo clean，然后输入hexo g 生成，然后再hexo s启动</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" data-id="cm374bhho0001k8tz5273hlq4" data-title="我的第一篇文章" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/07/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-11-07T09:29:23.720Z" itemprop="datePublished">2024-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/07/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/07/hello-world/" data-id="cm374bhhg0000k8tz39nae1ch" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/11/07/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
+          </li>
+        
+          <li>
+            <a href="/2024/11/07/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
