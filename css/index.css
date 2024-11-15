@@ -1497,6 +1497,13 @@ a {
 a:hover {
   color: #49b1f5;
 }
+#site-title,
+#site-subtitle,
+.site-name,
+#aside-content .author-info-name,
+#aside-content .author-info-description {
+  font-family: Segoe UI;
+}
 .text-center {
   text-align: center;
 }
@@ -1942,6 +1949,7 @@ blockquote > :last-child {
   height: 100%;
   vertical-align: top;
   text-align: center;
+  font-family: Segoe UI;
 }
 @media screen and (max-width: 768px) {
   .type-404 .error-content .error-info {
