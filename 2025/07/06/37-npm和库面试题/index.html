@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>npm和库 | Melon_Nie的月光橘海</title><meta name="author" content="Melon_Nie"><meta name="copyright" content="Melon_Nie"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="发布自己的npm包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm和库">
+<meta property="og:url" content="http://example.com/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="Melon_Nie的月光橘海">
+<meta property="og:description" content="发布自己的npm包">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/myimg/spring.png">
+<meta property="article:published_time" content="2025-07-06T15:09:52.000Z">
+<meta property="article:modified_time" content="2025-07-06T17:38:49.530Z">
+<meta property="article:author" content="Melon_Nie">
+<meta property="article:tag" content="npm">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/myimg/spring.png"><link rel="shortcut icon" href="/./myimg/cake.png"><link rel="canonical" href="http://example.com/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'npm和库',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./myimg/avatar1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">47</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(./myimg/spring.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Melon_Nie的月光橘海</span></a><a class="nav-page-title" href="/"><span class="site-name">npm和库</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">npm和库</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-06T15:09:52.000Z" title="发表于 2025-07-06 23:09:52">2025-07-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-06T17:38:49.530Z" title="更新于 2025-07-07 01:38:49">2025-07-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/npm/">npm</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="库与npm"><a href="#库与npm" class="headerlink" title="库与npm"></a>库与npm</h2><ol>
+<li>什么是库</li>
+</ol>
+<ul>
+<li>库是一组可重用的代码集合</li>
+<li>提供特定功能的API或组件</li>
+<li>可以被项目引入和使用</li>
+<li>通常解决特定领域的问题</li>
+</ul>
+<ol start="2">
+<li>库与pnpm的关系 ：</li>
+</ol>
+<ul>
+<li>pnpm是包管理器，用于：<ul>
+<li>安装和管理这些库的依赖</li>
+<li>维护依赖版本</li>
+<li>处理依赖之间的关系</li>
+<li>优化存储空间（通过硬链接）</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>pnpm的工作方式 ：</li>
+</ol>
+<ul>
+<li>当执行 pnpm install 时：<ul>
+<li>读取 package.json 中的依赖配置</li>
+<li>从 npm 仓库下载所需的库如</li>
+<li>使用硬链接优化存储</li>
+<li>生成 pnpm-lock.yaml 锁定版本</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>依赖类型 ：</li>
+</ol>
+<ul>
+<li>dependencies：项目运行必需的库</li>
+<li>devDependencies：开发时需要的库</li>
+</ul>
+<h1 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>安装最新版的node.js和npm ，验证</li>
+<li>注册npm账号</li>
+<li>使用官方npm源<code>npm config set registry https://registry.npmjs.org/</code><br><img src="/./postImgs/other/npm02.png" alt="准备工作"></li>
+</ul>
+<h2 id="初始化文件夹"><a href="#初始化文件夹" class="headerlink" title="初始化文件夹"></a>初始化文件夹</h2><h3 id="创建项目文件夹"><a href="#创建项目文件夹" class="headerlink" title="创建项目文件夹"></a>创建项目文件夹</h3><p> 运行<code>npm init -y</code> 生成package.jaon文件</p>
+<blockquote>
+<p>npm init与npm init -y</p>
+<ul>
+<li>npm init是一个交互式命令<br>执行后会逐项询问用户关于项目的配置信息，如项目名称、版本号、描述、入口文件、测试命令等<br>用户可以手动输入或修改这些字段的值。<br>最后根据用户的输入生成 package.json 文件</li>
+<li>npm init -y是非交互式的快捷方式<br>直接使用默认值生成 package.json 文件，无需用户确认或输入<br>如果你希望快速初始化项目并接受默认配置，使用 npm init -y<br>如果你想自定义项目的初始配置，使用 npm init 并逐步输入所需信息<br><img src="/./postImgs/other/npm03.png" alt="准备工作"></li>
+</ul>
+</blockquote>
+<h3 id="package-json-文件关键字段说明"><a href="#package-json-文件关键字段说明" class="headerlink" title="package.json 文件关键字段说明"></a>package.json 文件关键字段说明</h3><ol>
+<li>字段说明</li>
+</ol>
+<ul>
+<li>name：包名,npm 发布时的唯一标识<br>全局唯一，不能和已有npm包重名，用小写字母、数字、短横线（-）</li>
+<li>version：包的版本号,遵循语义化版本规范（如1.0.0）<br>格式：主版本号.次版本号.修订号（如 1.0.0</li>
+<li>main：入口文件路径（默认为index.js）<br>指定包的入口文件（即 require&#x2F;import 这个包时加载的文件）<br>当别人 require(‘my-canvas-tool’) 时，实际加载的是 src&#x2F;index.js</li>
+<li>description：包的描述，对包的简要描述，npm 官网、搜索时会显示</li>
+<li>keywords：关键字数组，帮助别人通过关键词搜索到你的包。</li>
+<li>license：开源协议，包的许可证类型，决定别人如何使用你的代码<br>“MIT”（MIT 是一种宽松的开源协议，允许自由使用、修改和分发）</li>
+<li>author：包的作者信息。可以写名字、邮箱等</li>
+<li>dependencies：生产依赖，包运行时需要的依赖<br>开发依赖，只在开发和测试时需要，发布包时不会被包含进最终包中<br>其他字段（我没写）<br>repository：代码仓库地址（如 GitHub）。<br>bugs：问题反馈地址。<br>homepage：项目主页。<br>files：发布到 npm 时包含的文件列表。<br>engines：指定支持的 Node 版本等</li>
+</ul>
+<ol start="2">
+<li>我的packaje.json文件<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-canvas-tool&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;一个简单的 Canvas 工具库，支持初始化和清空画布。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;main&quot;</span><span class="punctuation">:</span> <span class="string">&quot;src/index.js&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jest&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;keywords&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;canvas&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;tool&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;draw&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;author&quot;</span><span class="punctuation">:</span> <span class="string">&quot;melon-nie&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;license&quot;</span><span class="punctuation">:</span> <span class="string">&quot;MIT&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;mocha&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^10.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;jsdom&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^22.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;jest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^30.0.4&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  </span><br><span class="line"><span class="punctuation">&#125;</span> </span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="编写代码和测试文件"><a href="#编写代码和测试文件" class="headerlink" title="编写代码和测试文件"></a>编写代码和测试文件</h2><ol>
+<li>代码结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">my-canvas-tool/</span><br><span class="line">├── src/</span><br><span class="line">│   └── index.js （核心代码）</span><br><span class="line">├── test/</span><br><span class="line">│   └── test.js   （测试文件）</span><br><span class="line">├── .npmignore    （排除发布的文件）</span><br><span class="line">├── README.md     （使用说明）</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure></li>
+<li>代码示例（canvas 工具画圆）<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CanvasTool</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">canvas</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(canvas <span class="keyword">instanceof</span> <span class="title class_">HTMLCanvasElement</span>)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;参数必须为 HTMLCanvasElement&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">canvas</span> = canvas;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ctx</span> = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">clear</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">ctx</span>.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">canvas</span>.<span class="property">width</span>, <span class="variable language_">this</span>.<span class="property">canvas</span>.<span class="property">height</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title class_">CanvasTool</span>; </span><br></pre></td></tr></table></figure></li>
+<li>测试文件（使用 Jest,AI生成）<br>安装jest<code>npm install --save-dev jest</code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test/test.js</span></span><br><span class="line"><span class="keyword">const</span> assert = <span class="built_in">require</span>(<span class="string">&#x27;assert&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123; <span class="variable constant_">JSDOM</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;jsdom&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">CanvasTool</span> = <span class="built_in">require</span>(<span class="string">&#x27;../src/index&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注入 HTMLCanvasElement 到全局，兼容 Node.js 测试环境</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="variable language_">window</span> &#125; = <span class="keyword">new</span> <span class="title function_">JSDOM</span>(<span class="string">&#x27;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;&#x27;</span>);</span><br><span class="line"><span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span> = <span class="variable language_">window</span>.<span class="property">HTMLCanvasElement</span>;</span><br><span class="line"><span class="variable language_">global</span>.<span class="property">document</span> = <span class="variable language_">window</span>.<span class="property">document</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">describe</span>(<span class="string">&#x27;CanvasTool&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> canvas, ctxMock, tool;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">beforeEach</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 创建 mock canvas，原型指向 HTMLCanvasElement 以通过 instanceof 检查</span></span><br><span class="line">    canvas = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="number">100</span>;</span><br><span class="line">    canvas.<span class="property">height</span> = <span class="number">100</span>;</span><br><span class="line">    canvas.<span class="property">getContext</span> = jest.<span class="title function_">fn</span>();</span><br><span class="line">    <span class="comment">// 创建 mock 2d context</span></span><br><span class="line">    ctxMock = &#123;</span><br><span class="line">      <span class="attr">fillStyle</span>: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      <span class="attr">fillRect</span>: jest.<span class="title function_">fn</span>(),</span><br><span class="line">      <span class="attr">getImageData</span>: jest.<span class="title function_">fn</span>(<span class="function">() =&gt;</span> (&#123; <span class="attr">data</span>: <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">400</span>).<span class="title function_">fill</span>(<span class="number">0</span>) &#125;)),</span><br><span class="line">      <span class="attr">clearRect</span>: jest.<span class="title function_">fn</span>()</span><br><span class="line">    &#125;;</span><br><span class="line">    canvas.<span class="property">getContext</span>.<span class="title function_">mockReturnValue</span>(ctxMock);</span><br><span class="line">    tool = <span class="keyword">new</span> <span class="title class_">CanvasTool</span>(canvas);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">test</span>(<span class="string">&#x27;should initialize with a canvas element&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="title function_">expect</span>(tool.<span class="property">canvas</span>).<span class="title function_">toBe</span>(canvas);</span><br><span class="line">    <span class="title function_">expect</span>(tool.<span class="property">ctx</span>).<span class="title function_">toBe</span>(ctxMock);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">test</span>(<span class="string">&#x27;should clear the canvas&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    tool.<span class="property">ctx</span>.<span class="property">fillStyle</span> = <span class="string">&#x27;red&#x27;</span>;</span><br><span class="line">    tool.<span class="property">ctx</span>.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">    tool.<span class="title function_">clear</span>();</span><br><span class="line">    <span class="title function_">expect</span>(tool.<span class="property">ctx</span>.<span class="property">clearRect</span>).<span class="title function_">toHaveBeenCalledWith</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// mock HTMLCanvasElement 以通过构造函数类型检查</span></span><br><span class="line"><span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;&#125;;</span><br><span class="line"><span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">constructor</span> = <span class="variable language_">global</span>.<span class="property">HTMLCanvasElement</span>; </span><br></pre></td></tr></table></figure></li>
+<li>配置测试脚本<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;jest&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="发布前准备"><a href="#发布前准备" class="headerlink" title="发布前准备"></a>发布前准备</h2><h3 id="用jest进行测试"><a href="#用jest进行测试" class="headerlink" title="用jest进行测试"></a>用jest进行测试</h3><blockquote>
+<p>Jest 是一个流行的 JavaScript 测试框架，特点是：<br>零配置即可上手<br>支持断言、mock、快照等功能<br>适合测试 Node.js、前端、React 等项目<br>测试：<code>npm test</code><br><img src="/./postImgs/other/npm04.png" alt="准备工作"></p>
+</blockquote>
+<h3 id="编写README-md"><a href="#编写README-md" class="headerlink" title="编写README.md"></a>编写README.md</h3><p>包含以下内容：安装方法;使用示例;API 文档;贡献指南;开源协议</p>
+<h3 id="配置-npmignore"><a href="#配置-npmignore" class="headerlink" title="配置.npmignore"></a>配置.npmignore</h3><p>排除不需要发布的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">node_modules/</span><br><span class="line">test/</span><br><span class="line">.git/</span><br><span class="line">.DS_Store</span><br></pre></td></tr></table></figure>
+<h2 id="发布npm包-1"><a href="#发布npm包-1" class="headerlink" title="发布npm包"></a>发布npm包</h2><p><code>npm login</code><br><code>npm publish</code></p>
+<blockquote>
+<p>若包名已存在，需修改package.json中的name字段<br>每次发布新版本时，修改package.json中的version字段（遵循语义化版本控制），并重新运行npm publish<br>24 小时内可撤销发布<code>npm unpublish &lt;包名&gt;@&lt;版本号&gt; --force</code></p>
+</blockquote>
+<p><img src="/./postImgs/other/npm05.png" alt="发布npm包"><br><img src="/./postImgs/other/npm06.png" alt="发布npm包"></p>
+<p>如何使用<br>在想使用它的项目根目录下运行(包名是 my-canvas-tool)：<br><code>npm install my-canvas-tool</code></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Melon_Nie</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Melon_Nie的月光橘海</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/npm/">npm</a></div><div class="post-share"><div class="social-share" data-image="/./myimg/spring.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/07/02/45-antDesign/" title="react--Ant Design组件库使用"><img class="cover" src="/./myimg/lolcute1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">react--Ant Design组件库使用</div></div><div class="info-2"><div class="info-item-1">Ant design组件实现功能思路</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./myimg/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Melon_Nie</div><div class="author-info-description">欢迎访问，祝你拥有美好的一天~</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">47</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Nie7-Melon"><i class="fab fa-github"></i><span>我的github</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/Nie7-Melon" target="_blank" title="Github"><i class="fab fa-github" style="color: #fad701;"></i></a><a class="social-icon" href="https://gitee.com/melon-nie" target="_blank" title="Gitee"><i class="fa-solid fa-house" style="color: #fad701;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，如果能对你有帮助就更好啦</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%93%E4%B8%8Enpm"><span class="toc-number">1.</span> <span class="toc-text">库与npm</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%91%E5%B8%83npm%E5%8C%85"><span class="toc-number"></span> <span class="toc-text">发布npm包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.</span> <span class="toc-text">初始化文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">创建项目文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json-%E6%96%87%E4%BB%B6%E5%85%B3%E9%94%AE%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-number">2.2.</span> <span class="toc-text">package.json 文件关键字段说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81%E5%92%8C%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">编写代码和测试文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E5%89%8D%E5%87%86%E5%A4%87"><span class="toc-number">4.</span> <span class="toc-text">发布前准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8jest%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-number">4.1.</span> <span class="toc-text">用jest进行测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99README-md"><span class="toc-number">4.2.</span> <span class="toc-text">编写README.md</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-npmignore"><span class="toc-number">4.3.</span> <span class="toc-text">配置.npmignore</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83npm%E5%8C%85-1"><span class="toc-number">5.</span> <span class="toc-text">发布npm包</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/" title="npm和库"><img src="/./myimg/spring.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="npm和库"/></a><div class="content"><a class="title" href="/2025/07/06/37-npm%E5%92%8C%E5%BA%93%E9%9D%A2%E8%AF%95%E9%A2%98/" title="npm和库">npm和库</a><time datetime="2025-07-06T15:09:52.000Z" title="发表于 2025-07-06 23:09:52">2025-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/02/45-antDesign/" title="react--Ant Design组件库使用"><img src="/./myimg/lolcute1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="react--Ant Design组件库使用"/></a><div class="content"><a class="title" href="/2025/07/02/45-antDesign/" title="react--Ant Design组件库使用">react--Ant Design组件库使用</a><time datetime="2025-07-02T13:39:52.000Z" title="发表于 2025-07-02 21:39:52">2025-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/28/40-react/" title="react--学习笔记"><img src="/./myimg/lolcute8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="react--学习笔记"/></a><div class="content"><a class="title" href="/2025/06/28/40-react/" title="react--学习笔记">react--学习笔记</a><time datetime="2025-06-28T05:09:52.000Z" title="发表于 2025-06-28 13:09:52">2025-06-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/22/43-machine/" title="机器学习笔记"><img src="/./myimg/girl24.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器学习笔记"/></a><div class="content"><a class="title" href="/2025/06/22/43-machine/" title="机器学习笔记">机器学习笔记</a><time datetime="2025-06-22T06:09:52.000Z" title="发表于 2025-06-22 14:09:52">2025-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/06/18/42-font-back/" title="前后端交互"><img src="/./myimg/lolcute8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前后端交互"/></a><div class="content"><a class="title" href="/2025/06/18/42-font-back/" title="前后端交互">前后端交互</a><time datetime="2025-06-18T15:09:52.000Z" title="发表于 2025-06-18 23:09:52">2025-06-18</time></div></div></div></div></div></div></main><footer id="footer" style="background: linear-gradient(135deg,#FFE985 10%,#FA742B 100%);"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Melon_Nie</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-vercel-nine-ashen.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-vercel-nine-ashen.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
